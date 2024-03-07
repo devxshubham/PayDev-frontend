@@ -1,4 +1,9 @@
 export const Signup = ()=>{
+    const firstName = "";
+    const lastName = "";
+    const email = "";
+    const password = "";
+
     return <div className="flex flex-col gap-5 border p-5 max-w-[300px]">
         <div className="flex flex-col items-center">
             <h3 className="font-bold text-[30px]">Sign Up</h3>
@@ -23,7 +28,9 @@ export const Signup = ()=>{
             </div>
         </div>
         <div className="flex flex-col items-center gap-2">
-            <button className="py-1 w-full rounded bg-black text-white">Sign Up</button>
+            <button className="py-1 w-full rounded bg-black text-white" onClick={()=>{
+                
+            }}>Sign Up</button>
             <p className="font-[500]">Already have an account?  <button
                 className="underline">Login</button></p>
         </div>
