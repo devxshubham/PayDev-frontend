@@ -1,7 +1,7 @@
-import { SendMoney } from './components/sendMoney';
-import { Signin } from './components/signin';
-import { Signup } from './components/signup';
-import { Dashboard } from './components/dashboard';
+import { SendMoney } from './pages/sendMoney';
+import { Signin } from './pages/signin';
+import { Signup } from './pages/signup';
+import { Dashboard } from './pages/dashboard';
 
 import{
   createBrowserRouter,

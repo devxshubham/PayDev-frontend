@@ -1,5 +1,5 @@
-import { Navbar } from "./navbar"
-import { Main } from "./main"
+import { Navbar } from "../components/navbar"
+import { Main } from "../components/main"
 export const Dashboard = ()=>{
     return <div>
         <Navbar></Navbar>

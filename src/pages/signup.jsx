@@ -1,3 +1,7 @@
+import { Button } from "../components/button";
+import { InputBox } from "../components/inputBox";
+
+
 export const Signup = ()=>{
     const firstName = "";
     const lastName = "";
@@ -12,15 +16,15 @@ export const Signup = ()=>{
         <div className="flex flex-col gap-2">
             <div className="flex flex-col text-[#808080]  gap-1">
                 <h2 className="font-semibold text-black">First Name</h2>
-                <input className="border bg-transparent outline-none rounded py-1 px-2" type="text" placeholder="Shubham"/>
+                <InputBox place="Shubham"></InputBox>
             </div>
             <div className="flex flex-col text-[#808080] gap-1">
                 <h2 className="font-semibold text-black">Last Name</h2>
-                <input className="border outline-none rounded py-1 px-2" type="text" placeholder="Dev"/>
+                <InputBox place="Dev"></InputBox>
             </div>
             <div className="flex flex-col text-[#808080] gap-1">
                 <h2 className="font-semibold text-black">Email</h2>
-                <input className="border outline-none rounded py-1 px-2" type="text" placeholder="abc@gmail.com"/>
+                <InputBox place="abc@gmail.com"></InputBox>
             </div>
             <div className="flex flex-col text-[#808080] gap-1">
                 <h2 className="font-semibold text-black">Password</h2>
@@ -28,9 +32,8 @@ export const Signup = ()=>{
             </div>
         </div>
         <div className="flex flex-col items-center gap-2">
-            <button className="py-1 w-full rounded bg-black text-white" onClick={()=>{
-                
-            }}>Sign Up</button>
+            
+            <Button text="Sign Up"></Button>
             <p className="font-[500]">Already have an account?  <button
                 className="underline">Login</button></p>
         </div>

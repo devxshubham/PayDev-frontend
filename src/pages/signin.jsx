@@ -1,3 +1,5 @@
+import { Button } from "../components/button"
+
 export const Signin = ()=>{
     return <div className="flex bg-gray-500 justify-center items-center h-[100dvh]">
         <div className="flex flex-col gap-5 bg-white rounded-lg border p-5 max-w-[300px]">
@@ -8,7 +10,7 @@ export const Signin = ()=>{
             <div className="flex flex-col gap-2">
                 <div className="flex flex-col text-[#808080]  gap-1">
                     <h2 className="font-semibold text-black">Email</h2>
-                    <input className="border bg-transparent outline-none rounded py-1 px-2" type="text" placeholder="abc@gmail.com"/>
+                    <InputBox place="abc@gmail.com"></InputBox>
                 </div>
                 <div className="flex flex-col text-[#808080] gap-1">
                     <h2 className="font-semibold text-black">Password</h2>
@@ -17,7 +19,7 @@ export const Signin = ()=>{
                 
             </div>
             <div className="flex flex-col items-center gap-2">
-                <button className="py-1 w-full rounded bg-black text-white">Sign In</button>
+                <Button text="Sign In"></Button>
                 <p className="font-[500]">Don't have an account?  <button
                     className="underline">Sign Up</button></p>
             </div>
