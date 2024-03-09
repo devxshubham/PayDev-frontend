@@ -16,7 +16,6 @@ export const Signin = ()=>{
                     <h2 className="font-semibold text-black">Password</h2>
                     <input className="border outline-none rounded py-1 px-2" type="password" placeholder=""/>
                 </div>
-                
             </div>
             <div className="flex flex-col items-center gap-2">
                 <Button text="Sign In"></Button>
