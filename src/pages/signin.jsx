@@ -1,7 +1,11 @@
+import { useRef } from "react"
+
 import { Button } from "../components/button"
 
 export const Signin = ()=>{
-    return <div className="flex bg-gray-500 justify-center items-center h-[100dvh]">
+    // const 
+
+    return <div className="flex bg-gray-400 justify-center items-center h-[100dvh]">
         <div className="flex flex-col gap-5 bg-white rounded-lg border p-5 max-w-[300px]">
             <div className="flex flex-col items-center">
                 <h3 className="font-bold text-[30px]">Sign Up</h3>
