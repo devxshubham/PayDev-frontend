@@ -1,3 +1,3 @@
-export const InputBox = ({place}) => {
-    return <input className="border bg-transparent outline-none rounded py-1 px-2" type="text" placeholder={place}/>
+export const InputBox = ({place, type, onchange}) => {
+    return <input onChange={onchange} className="border bg-transparent outline-none rounded py-1 px-2" type={type} placeholder={place}/>
 }

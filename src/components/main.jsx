@@ -1,4 +1,22 @@
+import { useEffect, useState } from "react"
+import axios from 'axios'
+
 export const Main = () => {
+    const [users, setUsers ] = useState([]);
+    console.log(users);
+    useEffect( ()=> {
+        axios.get('http://localhost:3000/api/v1/user/bulk',{
+
+        },{
+            headers : {
+                Authorization : localStorage.getItem('token')
+            }
+        })
+        .then( res => {
+            setUsers(res.data.users);
+        })
+    },[])
+
     return <main className="flex flex-col gap-4 p-5">
         <div className="font-bold text-[16px]">
             Your Balance : 5000
@@ -9,15 +27,17 @@ export const Main = () => {
                 <input className="border w-[100%] p-1 rounded outline-none" type="text" placeholder="Search users..."/>
             </div>
             <div>
-                <div className="flex justify-between items-center leading-5">
-                    <div className="flex items-center gap-2">
-                        <div className="p-2 rounded-full bg-slate-300">U1</div>
-                        <div className="font-semibold">
-                            User 1
+                {users.map( user => {
+                    return <div key={user._id} className="flex justify-between m-2 items-center leading-5">
+                        <div className="flex items-center gap-2">
+                            <div className="p-2 w-9 h-9 rounded-full text-center leading-4 bg-slate-300">{user.firstName[0]}</div>
+                            <div className="font-semibold">
+                                {user.firstName} {user.lastName}
+                            </div>
                         </div>
+                        <button className="py-1 px-2 bg-black text-white rounded">Send Money</button>
                     </div>
-                    <button className="py-1 px-2 bg-black text-white rounded">Send Money</button>
-                </div>
+                })}
             </div>
         </div>
     </main>
