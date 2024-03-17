@@ -3,23 +3,39 @@ import axios from 'axios'
 
 export const Main = () => {
     const [users, setUsers ] = useState([]);
-    console.log(users);
+    const[balance, setBalance] = useState("")
     useEffect( ()=> {
         axios.get('http://localhost:3000/api/v1/user/bulk',{
 
         },{
             headers : {
-                Authorization : localStorage.getItem('token')
+                'Content-Type' : 'multipart/form-data',
+                'Authorization' : `Bearer ${localStorage.getItem('token')}`
             }
         })
         .then( res => {
             setUsers(res.data.users);
         })
+        .catch( err =>{
+            console.log(err);
+        })
+        axios.get('http://localhost:3000/api/v1/account/balance',{
+            headers : {
+                'Content-Type' : 'multipart/form-data',
+                'Authorization' : `Bearer ${localStorage.getItem('token')}`
+            }
+        })
+        .then( (res)=>{
+            setBalance(res.data.balance)
+        })
+        .catch( err =>{
+            console.log(err);
+        })
     },[])
 
     return <main className="flex flex-col gap-4 p-5">
         <div className="font-bold text-[16px]">
-            Your Balance : 5000
+            Your Balance : {balance}
         </div>
         <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-1">

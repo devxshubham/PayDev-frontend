@@ -22,7 +22,7 @@ export const Signin = ()=>{
             <div className="flex flex-col gap-2">
                 <div className="flex flex-col text-[#808080]  gap-1">
                     <h2 className="font-semibold text-black">Email</h2>
-                    <InputBox onChange={(e)=>{
+                    <InputBox onchange={(e)=>{
                         email.current = e.target.value;
                     }} place="abc@gmail.com"></InputBox>
                 </div>
@@ -35,12 +35,14 @@ export const Signin = ()=>{
             </div>
             <div className="flex flex-col items-center gap-2">
                 <Button onclick={()=>{
+                    console.log(email.current)
                         axios.post('http://localhost:3000/api/v1/user/signin',
                         {
                             email : email.current,
                             password : password.current
                         })
                         .then( (res) => {
+                            navigate('/dashboard')
                             localStorage.setItem('token', res.data.token)
                         })
                     }}
