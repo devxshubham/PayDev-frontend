@@ -1,5 +1,7 @@
+
+
 export const SendMoney= () =>{
-    return <div className="flex h-[100dvh] justify-center bg-gray-500 items-center">
+    return <div className="flex h-[100dvh] justify-center bg-gray-300 items-center">
         <div className="flex flex-col gap-12 box-shadow bg-white p-9 rounded-md w-[400px]">
             <div className="text-center text-[30px] font-bold">
                 Send Money
