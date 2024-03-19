@@ -3,14 +3,15 @@ import axios from 'axios'
 
 export const Navbar = () => {
     const [user, setUser] = useState({
-        firstName : ""
+        firstName : "user"
     })
+    console.log(user);
     useEffect( ()=>{
         axios.get('http://localhost:3000/api/v1/user/',{
-            headers : {
-                'Content-Type' : 'multipart/form-data',
-                'Authorization' : `Bearer ${localStorage.getItem('token')}`
-            }
+                headers : {
+                    'Content-Type' : 'multipart/form-data',
+                    'Authorization' : `Bearer ${localStorage.getItem('token')}`
+                }
             })
             .then( (res)=>{
                 setUser(res.data)
@@ -24,8 +25,8 @@ export const Navbar = () => {
             Payments App
         </div>
         <div className="flex items-center gap-3 leading-3">
-            <div>Hello, {(user) ? user.firstName : ""}</div>
-            <div className="rounded-[100%] p-2 bg-slate-400">{(user) ? user.firstName[0] : ""}</div>
+            <div>Hello, {user.firstName}</div>
+            <div className="flex items-center justify-center rounded-[100%] p-4 h-[10px] w-[10px] bg-slate-400">{user.firstName[0].toUpperCase()}</div>
         </div>
     </nav>
 }

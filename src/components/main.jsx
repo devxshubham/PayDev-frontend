@@ -61,7 +61,7 @@ export const Main = () => {
                             </div>
                         </div>
                         <button onClick={()=>{
-                            navigate('/send')
+                            navigate(`/send?_id=${user._id}&name=${user.firstName}`)
                         }} className="py-1 px-2 bg-black text-white rounded">Send Money</button>
                     </div>
                 })}
